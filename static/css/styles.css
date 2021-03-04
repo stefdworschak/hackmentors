@@ -8,7 +8,7 @@
 #greeting-card-cutout {
     width: 100%;
     height: 100%;
-    background: url('https://code-institute-room.slack.com/files/U01667HBMGQ/F01QE4AKR4L/hackpaddy-2.png');
+    background: url('/hackmentors/static/img/hackpaddy-2.png');
     background-position: top center;
     background-size: cover;
     z-index: 2;
