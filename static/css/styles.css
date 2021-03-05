@@ -61,6 +61,7 @@ body
 #greeting-card-cover
 {
     background: url('/static/img/profile_img.png');
+    background-color: var(--p-background);
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain;
@@ -71,6 +72,7 @@ body
     transform-style: preserve-3d;
     transition: 1s ease-in-out;
     z-index: 5;
+    /* backface-visibility: hidden; */
 }
 
 #greeting-card:hover #greeting-card-cover
