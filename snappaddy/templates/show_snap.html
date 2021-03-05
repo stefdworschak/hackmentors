@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row headline">
+    <div class="col-4 sub-headline">
+        <span>SnapPaddy</span>
+    </div>
+    <div class="col-4 sub-headline">
+
+    </div>
+    <div class="col-4 sub-headline">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card mt-3" id="greeting-card-snap" class="greeting-card">
+            <div id="greeting-card-cover" class="greeting-card">
+                <div id="greeting-card-cutout" class="greeting-card"></div>
+                <img id="greeting-card-image" class="show" src="{{snap.base64image}}">
+            </div>
+            <div id="greeting-card-text" class="greeting-card">
+                <h1>
+                    Happy St. Patrick's Day 2021!
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
