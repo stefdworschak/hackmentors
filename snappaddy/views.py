@@ -26,6 +26,7 @@ def save_image(request):
 
 
 def show_image(request, uuid_str):
+    """ Displays the saved image and cutout """
     _uuid = uuid.UUID(uuid_str)
     snap = get_object_or_404(SnapPaddyImage, uuid=_uuid)
     return render(request, 'show_snap.html', {'snap': snap})
