@@ -1,2 +1,176 @@
-{% extends "base.html" %} {% load static %}
+    {% extends "base.html" %}
+    {% load static %}
 
+    {% block content %}
+
+    <div class="row headline">
+        <div class="col-4 sub-headline">
+            <span>SnapPaddy</span>
+        </div>
+        <div class="col-4 sub-headline">
+
+        </div>
+        <div class="col-4 sub-headline">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-3" id="greeting-card" class="greeting-card">
+                <div id="greeting-card-cutout" class="greeting-card"></div>
+                <div class="camera" id="greeting-card-camera">
+                    <video id="video" autoplay="true">Video stream not available.</video>
+                </div>
+                <canvas id="greeting-card-canvas"></canvas>
+                <div class="greeting-card">
+                    <img id="greeting-card-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <button id="startbutton" class="btn btn-primary">
+                <i class="fas fa-camera-retro"></i><span class="pl-3">Take photo</span>
+            </button>
+
+            <form method="POST" action="save/" id="snapForm" class="text-center">
+                {% csrf_token %}
+                <input type="hidden" name="cutout" id="input-cutout">
+                <input type="hidden" name="snap-file" id="input-snap-file">
+                <button id="snapbutton" class="btn btn-success">
+                    Create Paddy Snap!
+                </button>
+            </form>
+
+            <button id="clearbutton" class="btn btn-primary">
+                <i class="fas fa-redo"></i><span class="pl-3">Re-take photo</span>
+            </button>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+    {% block js %}
+    <script>
+    let width = 600;    // We will scale the photo width to this
+    let height = 600;     // This will be computed based on the input stream
+
+    let streaming = false;
+
+    let video = null;
+    let canvas = null;
+    let photo = null;
+    let startbutton = null;
+    let clearbutton = null;
+    let inputCutout = null;
+    let inputSnapFile = null;
+    let cutout = null;
+    let snapForm = null;
+
+    startup();
+
+    function startup() {
+        video = document.getElementById('video');
+        canvas = document.getElementById('greeting-card-canvas');
+        photo = document.getElementById('greeting-card-image');
+        cutout = document.getElementById('greeting-card-cutout');
+        startbutton = document.getElementById('startbutton');
+        clearbutton = document.getElementById('clearbutton');
+        snapForm = document.getElementById('snapForm');
+        inputCutout = document.getElementById('input-cutout');
+        inputSnapFile = document.getElementById('input-snap-file');
+        
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+            .then(function(stream) {
+                console.log("hey")
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function(err) {
+                console.log("An error occurred: " + err);
+            });
+        }
+
+        video.addEventListener('canplay', function(ev){
+            if (!streaming) {
+                height = video.videoHeight / (video.videoWidth/width);
+            
+                video.setAttribute('height', '100%');
+                canvas.setAttribute('width', video.videoWidth);
+                canvas.setAttribute('height', video.videoHeight);
+                streaming = true;
+            }
+        }, false);
+
+        startbutton.addEventListener('click', function(ev){
+            takepicture();
+            ev.preventDefault();
+        }, false);
+
+        clearbutton.addEventListener('click', function(ev){
+            clearphoto();
+            ev.preventDefault();
+        }, false);
+    }
+
+    function clearphoto() {
+        var context = canvas.getContext('2d');
+        context.fillStyle = "#AAA";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        var data = canvas.toDataURL('image/png');
+        photo.setAttribute('src', data);
+
+        toggleReset();
+    }
+
+    function takepicture() {
+            var context = canvas.getContext('2d');
+            let drawStartX = 0;
+            let drawStartY = 0;
+
+            if(video.videoWidth > width){
+                drawStartX = ((width - video.videoWidth) / 2);
+            }
+            console.log(drawStartX)
+
+            context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+            var data = canvas.toDataURL('image/png');
+            console.log(data)
+            photo.setAttribute('src', data);
+            inputSnapFile.value = data;
+            let backgroundImgUrl = window.getComputedStyle(cutout).backgroundImage;
+            let background = backgroundImgUrl.replace('url("', '').replace('")', '');
+            background = background.split('/')
+            background.splice(0, 3)
+            let bImge = '/' + background.join('/')
+            console.log(bImge)
+            inputCutout.value = bImge;
+
+            toggleReset();
+    }
+
+    function toggleReset(){
+        if($(startbutton).css('display') != 'none'){
+            $(video).hide();
+            $(photo).show();
+            $(startbutton).hide();
+            $(clearbutton).css('display', 'inline-block');
+            $(snapForm).css('display', 'inline-block');
+        } else {
+            $(video).show();
+            $(photo).hide();
+            $(startbutton).css('display', 'inline-block');
+            $(clearbutton).hide();
+            $(snapForm).hide();
+        }
+        
+    }
+    </script>
+    {% endblock %}
