@@ -1,15 +1,19 @@
 :root 
 {
     --p-background: rgb(2, 138, 25);
+
     --p-borders: rgb(250, 235, 215);
+
     --p-shadows: rgba(0, 0, 0, .25);
 }
+
 *
 {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 body
 {
     display: flex;
@@ -18,12 +22,14 @@ body
     min-height: 100vh;
     background: var(--p-background);
 }
+
 .headline
 {
     width: 600px;
     position: relative;
     margin: 0 auto;
 }
+
 .sub-headline
 {
     display: flex;
@@ -34,6 +40,7 @@ body
     border: 1px solid var(--p-borders);
     border-radius: 4px;
 }
+
 #greeting-card 
 {
     position: relative;
@@ -45,10 +52,12 @@ body
     box-shadow: 10px 20px 40px var(--p-shadows);
     transition: 1s ease-in-out;
 }
+
 #greeting-card:hover
 {
     transform: translateX(50%);
 }
+
 #greeting-card-cover
 {
     background: url('/static/img/profile_img.png');
@@ -63,10 +72,12 @@ body
     transition: 1s ease-in-out;
     z-index: 5;
 }
+
 #greeting-card:hover #greeting-card-cover
 {
     transform: rotateY(-180deg);
 }
+
 #greeting-card-cutout 
 {
     width: 100%;
@@ -81,6 +92,7 @@ body
     justify-content: center;
     align-items: center;
 }
+
 #greeting-card-camera 
 {
     width: 100%;
