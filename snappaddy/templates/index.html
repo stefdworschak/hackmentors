@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +37,16 @@
                     <button id="clearbutton" class="btn btn-primary">
                         <i class="fas fa-redo"></i><span class="pl-3">Re-take photo</span>
                     </button>
+
+                    <form method="POST" action="save/" id="snapForm">
+                        {% csrf_token %}
+                        <input type="hidden" name="cutout" id="input-cutout">
+                        <input type="hidden" name="snap-file" id="input-snap-file">
+                        <button id="snapbutton" class="btn btn-success">
+                            Create Paddy Snap!
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -113,6 +125,18 @@
 
                 var data = canvas.toDataURL('image/png');
                 photo.setAttribute('src', data);
+                
+                let inputCutout = document.getElementById('input-cutout');
+                let inputSnapFile = document.getElementById('input-snap-file');
+                let greetingCardCutout = document.getElementById('greeting-card-cutout');
+                inputSnapFile.value = data;
+                let backgroundImgUrl = window.getComputedStyle(greetingCardCutout).backgroundImage;
+                let background = backgroundImgUrl.replace('url("', '').replace('")', '');
+                background = background.split('/')
+                background.splice(0, 3)
+                let bImge = '/' + background.join('/')
+                console.log(bImge)
+                inputCutout.value = bImge;
 
                 toggleReset();
             }
@@ -123,6 +147,10 @@
                 $(startbutton).toggle()
                 $(clearbutton).toggle()
             }
+
+            $('#snapForm').submit(function(){
+
+            })
         </script>
     </body>
 </html>
