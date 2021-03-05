@@ -59,11 +59,18 @@ h2 {
     border-radius: 4px;
 }
 
-#greeting-card 
+.greeting-card 
 {
-    position: relative;
     width: 600px;
     height: 600px;
+    overflow: hidden;
+}
+
+#greeting-card, #greeting-card-snap 
+{
+    width: 600px;
+    height: 600px;
+    position: relative;
     margin: 0 auto;
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -71,9 +78,17 @@ h2 {
     transition: 1s ease-in-out;
 }
 
-#greeting-card:hover
+#greeting-card-snap:hover
 {
     transform: translateX(50%);
+}
+
+#greeting-card-text {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
 }
 
 #greeting-card-cover
@@ -91,16 +106,16 @@ h2 {
     z-index: 5;
 }
 
-#greeting-card:hover #greeting-card-cover
+#greeting-card-snap:hover #greeting-card-cover
 {
     transform: rotateY(-180deg);
 }
 
-#greeting-card-cutout 
+#greeting-card-cutout
 {
     width: 100%;
     height: 100%;
-    background: url('/static/img/hackpaddy-2.png');
+    background: url('/static/img/hackpaddy-square.png');
     background-position: top center;
     background-size: cover;
     object-fit: contain;
@@ -111,7 +126,7 @@ h2 {
     align-items: center;
 }
 
-#greeting-card-camera 
+#greeting-card-camera
 {
     width: 100%;
     height: 100%;
@@ -119,9 +134,17 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
-#greeting-card-canvas, #greeting-card-image 
+#greeting-card-camera video, #greeting-card-image
+{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#greeting-card-canvas, #greeting-card-image
 {
     height: 100%;
     min-height: 100%;
@@ -130,12 +153,28 @@ h2 {
     display:none;
 }
 
-#clearbutton 
+#greeting-card-image.show
+{
+    display:block;
+}
+
+#startbutton, #clearbutton, #snapbutton
+{
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px 20px
+}
+
+i {
+    margin-right: 10px;
+}
+
+#clearbutton, #snapForm
 {
     display:none;
 }
 
-.snap-file 
+.snap-file
 {
     display: none;
 }
