@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'headings';
+    src: url('/static/fonts/LeprechaunHats-vLy.ttf');
+}
+@font-face {
+    font-family: 'body-text';
+    src: url('/static/fonts/CelticHand.ttf');
+}
+
+
 :root 
 {
     --p-background: rgb(2, 138, 25);
-
     --p-borders: rgb(250, 235, 215);
-
     --p-shadows: rgba(0, 0, 0, .25);
+    --off-white: #fafafa;
 }
 
 *
@@ -21,6 +30,15 @@ body
     align-items: center;
     min-height: 100vh;
     background: var(--p-background);
+    font-family: 'body-text';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'headings';
+}
+
+h2 {
+    color: var(--off-white) ;
 }
 
 .headline
