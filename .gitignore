@@ -1,2 +1,8 @@
 .venv
 *.sqlite3
+.vscode
+env
+__pycache__/
+core.python*
+*.py[cod]
+*.pyc

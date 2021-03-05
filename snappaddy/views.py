@@ -6,7 +6,7 @@ from .models import SnapPaddyImage
 
 def index(request):
     """ Displays the canvas and lets user create a new image """
-    return render(request, 'index.html')
+    return render(request, 'base.html')
 
 
 def save_image(request):

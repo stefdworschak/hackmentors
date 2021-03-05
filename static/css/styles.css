@@ -1,21 +1,88 @@
-#greeting-card {
+:root 
+{
+    --p-background: rgb(2, 138, 25);
+    --p-borders: rgb(250, 235, 215);
+    --p-shadows: rgba(0, 0, 0, .25);
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--p-background);
+}
+.headline
+{
+    width: 600px;
     position: relative;
-    width: 1000px;
-    height: 600px;
     margin: 0 auto;
 }
-
-#greeting-card-cutout {
+.sub-headline
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    padding: 20px;
+    border: 1px solid var(--p-borders);
+    border-radius: 4px;
+}
+#greeting-card 
+{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px var(--p-shadows);
+    transition: 1s ease-in-out;
+}
+#greeting-card:hover
+{
+    transform: translateX(50%);
+}
+#greeting-card-cover
+{
+    background: url('/static/img/profile_img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 1s ease-in-out;
+    z-index: 5;
+}
+#greeting-card:hover #greeting-card-cover
+{
+    transform: rotateY(-180deg);
+}
+#greeting-card-cutout 
+{
     width: 100%;
     height: 100%;
     background: url('/static/img/hackpaddy-2.png');
     background-position: top center;
     background-size: cover;
+    object-fit: contain;
     z-index: 2;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-#greeting-card-camera {
+#greeting-card-camera 
+{
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -24,7 +91,8 @@
     left: 0;
 }
 
-#greeting-card-canvas, #greeting-card-image {
+#greeting-card-canvas, #greeting-card-image 
+{
     height: 100%;
     min-height: 100%;
     margin: 0 auto;
@@ -32,10 +100,12 @@
     display:none;
 }
 
-#clearbutton {
+#clearbutton 
+{
     display:none;
 }
 
-.snap-file {
+.snap-file 
+{
     display: none;
 }
