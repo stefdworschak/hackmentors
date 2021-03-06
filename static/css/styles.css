@@ -10,10 +10,10 @@
 
 :root 
 {
-    --p-background: rgb(2, 138, 25);
-    --p-borders: rgb(250, 235, 215);
-    --p-shadows: rgba(0, 0, 0, .25);
-    --off-white: #fafafa;
+    --light-green: rgb(2, 138, 25);
+    --off-white: rgb(250, 235, 215);
+    --light-shadow: rgba(0, 0, 0, .25);
+    --dark-text: rgb(8, 8, 8);
 }
 
 *
@@ -23,43 +23,158 @@
     box-sizing: border-box;
 }
 
+html, body
+{
+    overflow: hidden;
+}
+
 body
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
-    height: 100vh;
-    background: url(../img/main-bg-tr.png) no-repeat bottom;
+    max-height: 100vh;
+    background: url(../img/main-bg-tr.png) no-repeat center center fixed;
     background-size: cover;
     font-family: 'body-text';
-    overflow: hidden;
+    letter-spacing: .8rem;
+}
+
+button
+{
+    padding: 25px;
+}
+
+.another-snap
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ANIMATIONS */
+
+#intro-animation
+{
+    top: 0;
+    left: 0;
+    background: var(--light-green);
+    position: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#main-body
+{
+    width: 100%;
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'headings';
 }
 
-h2 {
+h1, h2 {
     color: var(--off-white) ;
 }
 
-.headline
+.dark-text
 {
-    width: 600px;
-    position: relative;
-    margin: 0 auto;
+    color: var(--dark-text);
 }
 
-.sub-headline
+#intro-animation h1
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-    padding: 20px;
-    border: 1px solid var(--p-borders);
-    border-radius: 4px;
+    font-size: 4rem;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    border-top: 2px solid var(--off-white);
+    border-bottom: 2px solid var(--off-white);
+    animation: scrollLetters 2.8s forwards;
+    animation-delay: 1.15s;
+}
+
+@keyframes scrollLetters
+{
+    10%
+    {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    35%
+    {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    70.5%
+    {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    90.6%
+    {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
+#running-leprechaun,
+#chasing-paddy
+{
+    opacity: 0;
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    right: 50%;
+    transition: opacity .3s ease-in-out;
+    animation: runLeprechaunRun 4s ease-in-out 1;
+}
+#chasing-paddy
+{
+    transform: scaleX(-1);
+    animation-delay: 1.5s;
+}
+@keyframes runLeprechaunRun
+{
+    0%
+    {
+        opacity: 0;
+        right: -10%;
+    }
+    28%
+    {
+        opacity: 1;
+    }
+    78%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        right: 100%;
+    }
+}
+
+#intro-animation.hide 
+{
+    transition: opacity .3s ease-in-out;
+    animation: fadeOut 1.4s forwards;
+    animation-delay: 4s;
+}
+@keyframes fadeOut
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
 }
 
 .greeting-card 
@@ -77,8 +192,16 @@ h2 {
     margin: 0 auto;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    box-shadow: 10px 20px 40px var(--p-shadows);
-    transition: 1s ease-in-out;
+    box-shadow: 10px 20px 40px var(--light-shadow);
+    transition: all 1s ease-in-out;
+    animation: afterSnapSlide 2.2s;
+}
+@keyframes afterSnapSlide
+{
+    0%, 20%
+    {
+        transform: translateX(50%);
+    }
 }
 
 #greeting-card-snap:hover
@@ -105,14 +228,30 @@ h2 {
     width: 100%;
     transform-origin: left;
     transform-style: preserve-3d;
-    transition: 1s ease-in-out;
+    transition: all 1s ease-in-out;
     z-index: 5;
+    animation: afterSnap 2.2s;
 }
 
+/* ANIMATION SHOWS CARD AFTER SNAP TAKEN */
+@keyframes afterSnap
+{
+    0%,20%
+    {
+        transform: rotateY(-180deg);
+    }
+}
+
+/* OPEN CARD ON HOVER */
 #greeting-card-snap:hover #greeting-card-cover
 {
     transform: rotateY(-180deg);
 }
+
+/* END ANIMATIONS */
+
+
+/* CARD CUTOUTS */
 
 #greeting-card-cutout
 {
@@ -183,16 +322,41 @@ i {
 }
 
 /* Corner frame */
-.corner-frame {
+.corner-frame img
+{
+    overflow: hidden;
     position: absolute;
     width: 30%;
-    top: -2%;
-    left: -3%;
 }
 
-@media screen and (min-width: 768px) {
-    .corner-frame {
-        top: -6%;
-        left: -2%;
+.top-left img
+{
+    top: -2%;
+    left: -1%;
+}
+
+.bottom-right img
+{
+    bottom: -3%;
+    right: -1%;
+}
+
+@media screen and (min-width: 1024px)
+{
+    .corner-frame img
+    {
+        width: 25%;
+    }
+
+    .top-left img
+    {
+        top: -3%;
+        left: -3%;
+    }
+
+    .bottom-right img
+    {
+        bottom: -3%;
+        right: -3%;
     }
 }
