@@ -2,20 +2,10 @@
 {% load static %}
 
 {% block content %}
-
-<img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame" class="corner-frame">
-
-<div class="row headline">
-    <div class="col-4 sub-headline">
-        <span>SnapPaddy</span>
-    </div>
-    <div class="col-4 sub-headline">
-
-    </div>
-    <div class="col-4 sub-headline">
-
-    </div>
+<div class="corner-frame top-left">
+    <img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame">
 </div>
+
 <div class="row">
     <div class="col-12">
         <div class="card mt-3" id="greeting-card" class="greeting-card">
@@ -51,6 +41,10 @@
         </button>
 
     </div>
+</div>
+
+<div class="corner-frame bottom-right">
+    <img src="{% static 'img/corner-br.png' %}" alt="shamrock corner frame">
 </div>
 
 {% endblock %}

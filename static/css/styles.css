@@ -23,17 +23,29 @@
     box-sizing: border-box;
 }
 
+html, body
+{
+    overflow: hidden;
+}
+
 body
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
-    height: 100vh;
-    background: url(../img/main-bg-tr.png) no-repeat bottom;
+    max-height: 100vh;
+    background: url(../img/main-bg-tr.png) no-repeat center center fixed;
     background-size: cover;
     font-family: 'body-text';
-    overflow: hidden;
+}
+
+#main-body
+{
+    width: 100%;
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,24 +54,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
     color: var(--off-white) ;
-}
-
-.headline
-{
-    width: 600px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.sub-headline
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-    padding: 20px;
-    border: 1px solid var(--p-borders);
-    border-radius: 4px;
 }
 
 .greeting-card 
@@ -183,16 +177,41 @@ i {
 }
 
 /* Corner frame */
-.corner-frame {
+.corner-frame img
+{
+    overflow: hidden;
     position: absolute;
     width: 30%;
-    top: -2%;
-    left: -3%;
 }
 
-@media screen and (min-width: 768px) {
-    .corner-frame {
-        top: -6%;
-        left: -2%;
+.top-left img
+{
+    top: -2%;
+    left: -1%;
+}
+
+.bottom-right img
+{
+    bottom: -3%;
+    right: -1%;
+}
+
+@media screen and (min-width: 1024px)
+{
+    .corner-frame img
+    {
+        width: 25%;
+    }
+
+    .top-left img
+    {
+        top: -3%;
+        left: -3%;
+    }
+
+    .bottom-right img
+    {
+        bottom: -3%;
+        right: -3%;
     }
 }
