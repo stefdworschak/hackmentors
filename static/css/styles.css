@@ -31,32 +31,119 @@ body
     min-height: 100vh;
     background: var(--p-background);
     font-family: 'body-text';
+    letter-spacing: .8rem;
+}
+
+/* ANIMATIONS */
+
+#intro-animation
+{
+    top: 0;
+    left: 0;
+    background: var(--p-background);
+    position: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#intro-animation h1
+{
+    font-size: 4rem;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    border-top: 2px solid var(--p-borders);
+    border-bottom: 2px solid var(--p-borders);
+    animation: scrollLetters 2.5s forwards;
+    animation-delay: .8s;
+}
+
+@keyframes scrollLetters
+{
+    20%
+    {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    35%
+    {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    80%
+    {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    100%
+    {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
+#running-leprechaun,
+#chasing-paddy
+{
+    opacity: 0;
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    right: 50%;
+    transition: opacity .3s ease-in-out;
+    animation: runLeprechaunRun 3s ease-in-out 1;
+}
+#chasing-paddy
+{
+    transform: scaleX(-1);
+    animation-delay: 1.8s;
+}
+@keyframes runLeprechaunRun
+{
+    0%
+    {
+        opacity: 0;
+        right: -10%;
+    }
+    28%
+    {
+        opacity: 1;
+    }
+    78%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        right: 100%;
+    }
+}
+
+#intro-animation.hide 
+{
+    transition: opacity .3s ease-in-out;
+    animation: fadeOut 1.4s forwards;
+    animation-delay: 4s;
+}
+@keyframes fadeOut
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'headings';
 }
 
-h2 {
+h1, h2 {
     color: var(--off-white) ;
-}
-
-.headline
-{
-    width: 600px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.sub-headline
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-    padding: 20px;
-    border: 1px solid var(--p-borders);
-    border-radius: 4px;
 }
 
 .greeting-card 
@@ -75,7 +162,15 @@ h2 {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     box-shadow: 10px 20px 40px var(--p-shadows);
-    transition: 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    animation: afterSnapSlide 2.2s;
+}
+@keyframes afterSnapSlide
+{
+    0%, 20%
+    {
+        transform: translateX(50%);
+    }
 }
 
 #greeting-card-snap:hover
@@ -102,14 +197,30 @@ h2 {
     width: 100%;
     transform-origin: left;
     transform-style: preserve-3d;
-    transition: 1s ease-in-out;
+    transition: all 1s ease-in-out;
     z-index: 5;
+    animation: afterSnap 2.2s;
 }
 
+/* ANIMATION SHOWS CARD AFTER SNAP TAKEN */
+@keyframes afterSnap
+{
+    0%,20%
+    {
+        transform: rotateY(-180deg);
+    }
+}
+
+/* OPEN CARD ON HOVER */
 #greeting-card-snap:hover #greeting-card-cover
 {
     transform: rotateY(-180deg);
 }
+
+/* END ANIMATIONS */
+
+
+/* CARD CUTOUTS */
 
 #greeting-card-cutout
 {
