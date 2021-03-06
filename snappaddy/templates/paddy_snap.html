@@ -2,6 +2,10 @@
 {% load static %}
 
 {% block content %}
+<div class="corner-frame top-left">
+    <img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame">
+</div>
+
 <div id="intro-animation" class="container-fluid">
     <h1>Snap Paddy</h1>
     <div id="running-leprechaun">
@@ -11,7 +15,8 @@
     <div id="chasing-paddy">
         <img src="/static/img/paddy_chasing.webp" alt="paddy running">
     </div>
-</div>
+</div>    
+
 <div class="row">
     <div class="col-12">
         <div class="card mt-3" id="greeting-card" class="greeting-card">
@@ -47,6 +52,10 @@
         </button>
 
     </div>
+</div>
+
+<div class="corner-frame bottom-right">
+    <img src="{% static 'img/corner-br.png' %}" alt="shamrock corner frame">
 </div>
 
 {% endblock %}
