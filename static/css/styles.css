@@ -56,13 +56,13 @@ body
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     border-top: 2px solid var(--p-borders);
     border-bottom: 2px solid var(--p-borders);
-    animation: scrollLetters 2.5s forwards;
-    animation-delay: .8s;
+    animation: scrollLetters 2.8s forwards;
+    animation-delay: 1.15s;
 }
 
 @keyframes scrollLetters
 {
-    20%
+    10%
     {
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     }
@@ -70,11 +70,11 @@ body
     {
         clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
-    80%
+    70.5%
     {
         clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
-    100%
+    90.6%
     {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
@@ -89,12 +89,12 @@ body
     width: 500px;
     right: 50%;
     transition: opacity .3s ease-in-out;
-    animation: runLeprechaunRun 3s ease-in-out 1;
+    animation: runLeprechaunRun 4s ease-in-out 1;
 }
 #chasing-paddy
 {
     transform: scaleX(-1);
-    animation-delay: 1.8s;
+    animation-delay: 1.5s;
 }
 @keyframes runLeprechaunRun
 {
