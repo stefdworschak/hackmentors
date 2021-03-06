@@ -2,29 +2,27 @@
     font-family: 'headings';
     src: url('/static/fonts/LeprechaunHats-vLy.ttf');
 }
+
 @font-face {
     font-family: 'body-text';
     src: url('/static/fonts/CelticHand.ttf');
 }
 
 
-:root 
-{
+:root {
     --p-background: rgb(2, 138, 25);
     --p-borders: rgb(250, 235, 215);
     --p-shadows: rgba(0, 0, 0, .25);
     --off-white: #fafafa;
 }
 
-*
-{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body
-{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,23 +34,26 @@ body
     overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'headings';
 }
 
 h2 {
-    color: var(--off-white) ;
+    color: var(--off-white);
 }
 
-.headline
-{
+.headline {
     width: 600px;
     position: relative;
     margin: 0 auto;
 }
 
-.sub-headline
-{
+.sub-headline {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,15 +63,16 @@ h2 {
     border-radius: 4px;
 }
 
-.greeting-card 
-{
+.greeting-card {
     width: 600px;
     height: 600px;
     overflow: hidden;
+    background: url(/static/img/greetingCard/card-inner-bg-tr.png) no-repeat center center;
+    background-size: cover;
 }
 
-#greeting-card, #greeting-card-snap 
-{
+#greeting-card,
+#greeting-card-snap {
     width: 600px;
     height: 600px;
     position: relative;
@@ -81,21 +83,24 @@ h2 {
     transition: 1s ease-in-out;
 }
 
-#greeting-card-snap:hover
-{
+#greeting-card-snap:hover {
     transform: translateX(50%);
 }
 
-#greeting-card-text {
+/* #greeting-card-text {
     display:flex;
     justify-content: center;
     align-items: center;
     padding: 50px;
     text-align: center;
+} */
+
+#inner-card-content {
+    height: fit-content;
+    margin-top: 28%;
 }
 
-#greeting-card-cover
-{
+#greeting-card-cover {
     background: url('/static/img/profile_img.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -109,16 +114,14 @@ h2 {
     z-index: 5;
 }
 
-#greeting-card-snap:hover #greeting-card-cover
-{
+#greeting-card-snap:hover #greeting-card-cover {
     transform: rotateY(-180deg);
 }
 
-#greeting-card-cutout
-{
+#greeting-card-cutout {
     width: 100%;
     height: 100%;
-    background: url('/static/img/hackpaddy-square.png');
+    background: url('/static/img/cutouts/snap-test-3.png');
     background-position: top center;
     background-size: cover;
     object-fit: contain;
@@ -129,8 +132,7 @@ h2 {
     align-items: center;
 }
 
-#greeting-card-camera
-{
+#greeting-card-camera {
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -140,29 +142,29 @@ h2 {
     overflow: hidden;
 }
 
-#greeting-card-camera video, #greeting-card-image
-{
+#greeting-card-camera video,
+#greeting-card-image {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#greeting-card-canvas, #greeting-card-image
-{
+#greeting-card-canvas,
+#greeting-card-image {
     height: 100%;
     min-height: 100%;
     margin: 0 auto;
     z-index: 1;
-    display:none;
+    display: none;
 }
 
-#greeting-card-image.show
-{
-    display:block;
+#greeting-card-image.show {
+    display: block;
 }
 
-#startbutton, #clearbutton, #snapbutton
-{
+#startbutton,
+#clearbutton,
+#snapbutton {
     margin-top: 20px;
     font-size: 24px;
     padding: 10px 20px
@@ -172,13 +174,12 @@ i {
     margin-right: 10px;
 }
 
-#clearbutton, #snapForm
-{
-    display:none;
+#clearbutton,
+#snapForm {
+    display: none;
 }
 
-.snap-file
-{
+.snap-file {
     display: none;
 }
 

@@ -23,10 +23,32 @@
                 <div id="greeting-card-cutout" class="greeting-card"></div>
                 <img id="greeting-card-image" class="show" src="{{snap.base64image}}">
             </div>
-            <div id="greeting-card-text" class="greeting-card">
-                <h1>
-                    Happy St. Patrick's Day 2021!
-                </h1>
+            <div id="greeting-card-text" class="greeting-card text-center text-dark d-flex justify-content-center">
+                <div id="inner-card-content" class="d-block">
+                    <h1 class="my-2">
+                        Happy St. Patrick's Day!
+                    </h1>
+                    <h2 class="text-dark">~ 2021 ~</h2>
+                    <div class="social-share">
+                        <p>Share your Paddy Snap with your friends!</p>
+
+                        <!-- insert template tag for snap id after url ==> https://snap-paddy.herokuapp.com/show/ =>123456789<= -->
+                        <a class="btn btn-outline-primary btn-lg"
+                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A//snap-paddy.herokuapp.com/show/"
+                            target="blank">
+                            <i class="fas fa-share-alt fa-lg mx-2"></i>
+                            <i class="fab fa-facebook fa-lg mx-2"></i>
+                        </a>
+
+                        <!-- insert template tag for snap id after url ==> https://snap-paddy.herokuapp.com/ =>123456789<= -->
+                        <a class="btn btn-outline-primary btn-lg"
+                            href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0Ahttps%3A//snap-paddy.herokuapp.com/show/123456%0A%23hackathon%20%23codeinstitute"
+                            target="blank">
+                            <i class="fas fa-share-alt fa-lg mx-2"></i>
+                            <i class="fab fa-twitter fa-lg mx-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
