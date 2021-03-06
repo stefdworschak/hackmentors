@@ -29,8 +29,11 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--p-background);
+    height: 100vh;
+    background: url(../img/main-bg-tr.png) no-repeat bottom;
+    background-size: cover;
     font-family: 'body-text';
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -177,4 +180,19 @@ i {
 .snap-file
 {
     display: none;
+}
+
+/* Corner frame */
+.corner-frame {
+    position: absolute;
+    width: 30%;
+    top: -2%;
+    left: -3%;
+}
+
+@media screen and (min-width: 768px) {
+    .corner-frame {
+        top: -6%;
+        left: -2%;
+    }
 }
