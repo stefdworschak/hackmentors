@@ -2,16 +2,14 @@
 {% load static %}
 
 {% block content %}
-
-<div class="row headline">
-    <div class="col-4 sub-headline">
-        <span>SnapPaddy</span>
+<div id="intro-animation" class="container-fluid">
+    <h1>Snap Paddy</h1>
+    <div id="running-leprechaun">
+        <h2>Nya ha ha..</h2>
+        <img src="/static/img/leprechaun_gold.gif" alt="leprechaun running with bag of gold">
     </div>
-    <div class="col-4 sub-headline">
-
-    </div>
-    <div class="col-4 sub-headline">
-
+    <div id="chasing-paddy">
+        <img src="/static/img/paddy_chasing.webp" alt="paddy running">
     </div>
 </div>
 <div class="row">
@@ -54,6 +52,15 @@
 {% endblock %}
 
 {% block js %}
+<script>
+    let introAnim = document.getElementById('intro-animation');
+
+    window.addEventListener('load', () => {
+    
+    introAnim.classList.add('hide');
+    
+  });
+</script>
 <script>
 
 let width = 600;    // We will scale the photo width to this
