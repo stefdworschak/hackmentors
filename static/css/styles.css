@@ -9,8 +9,7 @@
 }
 
 
-:root 
-{
+:root {
     --light-green: rgb(2, 138, 25);
     --off-white: rgb(250, 235, 215);
     --light-shadow: rgba(0, 0, 0, .25);
@@ -23,13 +22,12 @@
     box-sizing: border-box;
 }
 
-html, body
-{
+html,
+body {
     overflow: hidden;
 }
 
-body
-{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,22 +41,20 @@ body
     letter-spacing: .8rem;
 }
 
-button
-{
+button {
     padding: 25px;
 }
 
-.another-snap
-{
+.another-snap {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* ANIMATIONS */
 
-#intro-animation
-{
+#intro-animation {
     top: 0;
     left: 0;
     background: var(--light-green);
@@ -70,8 +66,8 @@ button
     align-items: center;
     z-index: 10;
 }
-#main-body
-{
+
+#main-body {
     width: 100%;
     height: 100%;
 }
@@ -85,17 +81,16 @@ h6 {
     font-family: 'headings';
 }
 
-h1, h2 {
-    color: var(--off-white) ;
+h1,
+h2 {
+    color: var(--off-white);
 }
 
-.dark-text
-{
+.dark-text {
     color: var(--dark-text);
 }
 
-#intro-animation h1
-{
+#intro-animation h1 {
     font-size: 4rem;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     border-top: 2px solid var(--off-white);
@@ -104,29 +99,26 @@ h1, h2 {
     animation-delay: 1.15s;
 }
 
-@keyframes scrollLetters
-{
-    10%
-    {
+@keyframes scrollLetters {
+    10% {
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     }
-    35%
-    {
+
+    35% {
         clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
-    70.5%
-    {
+
+    70.5% {
         clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     }
-    90.6%
-    {
+
+    90.6% {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
 
 #running-leprechaun,
-#chasing-paddy
-{
+#chasing-paddy {
     opacity: 0;
     position: absolute;
     height: 300px;
@@ -135,47 +127,44 @@ h1, h2 {
     transition: opacity .3s ease-in-out;
     animation: runLeprechaunRun 4s ease-in-out 1;
 }
-#chasing-paddy
-{
+
+#chasing-paddy {
     transform: scaleX(-1);
     animation-delay: 1.5s;
 }
-@keyframes runLeprechaunRun
-{
-    0%
-    {
+
+@keyframes runLeprechaunRun {
+    0% {
         opacity: 0;
         right: -10%;
     }
-    28%
-    {
+
+    28% {
         opacity: 1;
     }
-    78%
-    {
+
+    78% {
         opacity: 1;
     }
-    100%
-    {
+
+    100% {
         opacity: 0;
         right: 100%;
     }
 }
 
-#intro-animation.hide 
-{
+#intro-animation.hide {
     transition: opacity .3s ease-in-out;
     animation: fadeOut 1.4s forwards;
     animation-delay: 4s;
 }
-@keyframes fadeOut
-{
-    0%
-    {
+
+@keyframes fadeOut {
+    0% {
         opacity: 1;
     }
-    100%
-    {
+
+    100% {
         opacity: 0;
         visibility: hidden;
         display: none;
@@ -202,10 +191,11 @@ h1, h2 {
     transition: all 1s ease-in-out;
     animation: afterSnapSlide 2.2s;
 }
-@keyframes afterSnapSlide
-{
-    0%, 20%
-    {
+
+@keyframes afterSnapSlide {
+
+    0%,
+    20% {
         transform: translateX(50%);
     }
 }
@@ -224,7 +214,8 @@ h1, h2 {
 
 #inner-card-content {
     height: fit-content;
-    margin-top: 28%;
+    margin-top: 20%;
+    width: 60%;
 }
 
 #greeting-card-cover {
@@ -243,17 +234,16 @@ h1, h2 {
 }
 
 /* ANIMATION SHOWS CARD AFTER SNAP TAKEN */
-@keyframes afterSnap
-{
-    0%,20%
-    {
+@keyframes afterSnap {
+
+    0%,
+    20% {
         transform: rotateY(-180deg);
     }
 }
 
 /* OPEN CARD ON HOVER */
-#greeting-card-snap:hover #greeting-card-cover
-{
+#greeting-card-snap:hover #greeting-card-cover {
     transform: rotateY(-180deg);
 }
 
@@ -262,8 +252,7 @@ h1, h2 {
 
 /* CARD CUTOUTS */
 
-#greeting-card-cutout
-{
+#greeting-card-cutout {
     width: 100%;
     height: 100%;
     background: url('/static/img/cutouts/snap-test-3.png');
@@ -329,40 +318,33 @@ i {
 }
 
 /* Corner frame */
-.corner-frame img
-{
+.corner-frame img {
     overflow: hidden;
     position: absolute;
     width: 30%;
 }
 
-.top-left img
-{
+.top-left img {
     top: -2%;
     left: -1%;
 }
 
-.bottom-right img
-{
+.bottom-right img {
     bottom: -3%;
     right: -1%;
 }
 
-@media screen and (min-width: 1024px)
-{
-    .corner-frame img
-    {
+@media screen and (min-width: 1024px) {
+    .corner-frame img {
         width: 25%;
     }
 
-    .top-left img
-    {
+    .top-left img {
         top: -3%;
         left: -3%;
     }
 
-    .bottom-right img
-    {
+    .bottom-right img {
         bottom: -3%;
         right: -3%;
     }
