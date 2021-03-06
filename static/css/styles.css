@@ -43,6 +43,18 @@ body
     letter-spacing: .8rem;
 }
 
+button
+{
+    padding: 25px;
+}
+
+.another-snap
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ANIMATIONS */
 
 #intro-animation
