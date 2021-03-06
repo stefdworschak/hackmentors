@@ -6,6 +6,8 @@
     <img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame">
 </div>
 
+<!-- COMMENTED OUT THE INTRO ANIMATION FOR NOW -->
+<!-- 
 <div id="intro-animation" class="container-fluid">
     <h1>Snap Paddy</h1>
     <div id="running-leprechaun">
@@ -15,7 +17,7 @@
     <div id="chasing-paddy">
         <img src="/static/img/paddy_chasing.webp" alt="paddy running">
     </div>
-</div>    
+</div>     -->
 
 <div class="row">
     <div class="col-12">
@@ -61,7 +63,9 @@
 {% endblock %}
 
 {% block js %}
-<script>
+
+<!-- INTRO ANIMATIONS COMMENTED OUT FOR NOW -->
+<!-- <script>
     let introAnim = document.getElementById('intro-animation');
 
     window.addEventListener('load', () => {
@@ -69,7 +73,7 @@
     introAnim.classList.add('hide');
     
   });
-</script>
+</script> -->
 <script>
 
 let width = 600;    // We will scale the photo width to this
