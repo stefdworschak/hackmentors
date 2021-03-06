@@ -120,18 +120,18 @@ function startup() {
 }
 
 function clearphoto() {
-    var context = canvas.getContext('2d');
+    let context = canvas.getContext('2d');
     context.fillStyle = "#AAA";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    var data = canvas.toDataURL('image/png');
+    let data = canvas.toDataURL('image/png');
     photo.setAttribute('src', data);
 
     toggleReset();
 }
 
 function takepicture() {
-    var context = canvas.getContext('2d');
+    let context = canvas.getContext('2d');
     let drawStartX = 0;
     let drawStartY = 0;
 
@@ -142,7 +142,7 @@ function takepicture() {
 
     context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 
-    var data = canvas.toDataURL('image/png');
+    let data = canvas.toDataURL('image/png');
     console.log(data)
     photo.setAttribute('src', data);
     inputSnapFile.value = data;
