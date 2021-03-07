@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block content %}
-<div class="corner-frame top-left">
-    <img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame">
-</div>
 <div class="row">
     <div class="col-12">
         <div class="card mt-3" id="greeting-card-snap" class="greeting-card">
@@ -16,40 +13,37 @@
                 <div id="inner-card-content" class="d-block fw-bold">
                     <p class="my-2 fs-3"> Happy St. Patrick's Day 2021!
                     </p>
-                    <div class="social-share my-3">
-                        <p>Share your Paddy Snap with friends<span>!</span></p>
-                        <i class="fas fa-share-alt fa-lg mx-2"></i>
-                        <!-- insert template tag for snap id after url ==> u=https%3A//snap-paddy.herokuapp.com/show/ =>123456789<= -->
-                        <a class="btn btn-outline-primary btn-lg"
-                            href="https://www.facebook.com/sharer/sharer.php?u={{host}}show/{{snap.uuid}}"
-                            target="blank">
-                            <i class="fab fa-facebook fa-lg mx-2"></i>
-                        </a>
-
-                        <!-- insert template tag for snap id after url ==> https%3A//snap-paddy.herokuapp.com/ =>123456789<= -->
-                        <a class="btn btn-outline-primary btn-lg"
-                            href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0A{{host}}show/{{snap.uuid}}%0A%23hackathon%20%23codeinstitute"
-                            target="blank">
-                            
-                            <i class="fab fa-twitter fa-lg mx-2"></i>
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-12 mt3">
-        <div class="another-snap">
-            <a href="{% url 'index' %}" class="btn"><button class="dark-text">
-                    Another Paddy Snap
-                </button></a>
-        </div>
-    </div>
+<div class="social-share">
+    <i class="fas fa-share-alt"></i>
+    <p>Share your Paddy Snap with friends<span>!</span></p>
 </div>
-<div class="corner-frame bottom-right">
-    <img src="{% static 'img/corner-br.png' %}" alt="shamrock corner frame">
-</div>
+<div class="another-snap">
+    <a href="{% url 'index' %}" >
+        <button id="take-new-snap" class="dark-text">
+            <i class="fas fa-camera"></i>
+        </button>
+    </a>
+    <!-- insert template tag for snap id after url ==> u=https%3A//snap-paddy.herokuapp.com/show/ =>123456789<= -->
+    <a class="" href="https://www.facebook.com/sharer/sharer.php?u={{host}}show/{{snap.uuid}}"
+    target="blank">
+    <button id="share-to-facebook">
+        <i class="fab fa-facebook fa-lg mx-2"></i>
+    </button>
+    </a>
 
+    <!-- insert template tag for snap id after url ==> https%3A//snap-paddy.herokuapp.com/ =>123456789<= -->
+    <a class="" 
+    href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0A{{host}}show/{{snap.uuid}}%0A%23hackathon%20%23codeinstitute"
+    target="blank">
+    <button id="share-to-twitter">
+    <i class="fab fa-twitter fa-lg mx-2"></i>
+    </button>
+    </a>
+</div>
 {% endblock %}
