@@ -15,9 +15,17 @@
 
     </head>
     <body>
-        <div class="container-fluid">
+        <div id="main-body" class="container-fluid">
+            <div class="corner-frame top-left">
+                <img src="{% static 'img/corner-tl.png' %}" alt="shamrock corner frame">
+            </div>
+            <div class="corner-frame bottom-right">
+                <img src="{% static 'img/corner-br.png' %}" alt="shamrock corner frame">
+            </div>
+
             {% block content %}
             {% endblock %}
+            
         </div>
         
         {% block js %}
