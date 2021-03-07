@@ -7,3 +7,5 @@ core.python*
 *.py[cod]
 *.pyc
 venv
+env.py
+
