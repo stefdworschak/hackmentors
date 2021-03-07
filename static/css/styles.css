@@ -7,6 +7,10 @@
     font-family: 'body-text';
     src: url('/static/fonts/CelticHand.ttf');
 }
+@font-face {
+    font-family: 'irish';
+    src: url('/static/fonts/irish.ttf');
+}
 
 /* === COLOR VARIABLES === */
 :root {
@@ -299,6 +303,7 @@ i {
 /* END ANIMATIONS */
 
 /* ===OUTER CARD CONTENT=== */
+
 #greeting-card-cover {
     background: url('/static/img/profile_img.png');
     background-repeat: no-repeat;
@@ -344,8 +349,14 @@ i {
     font-size: 120%;
 }
 
-#inner-card-content>span {
-    font-family: 'headings', sans-serif;
+.social-share>p {
+    font-family: 'irish', sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.social-share>p span {
+    font-family: sans-serif;
 }
 
 /* === MEDIA QUERIES === */
