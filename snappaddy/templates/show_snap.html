@@ -10,15 +10,16 @@
                 <img id="greeting-card-image" class="show" src="{{snap.base64image}}">
             </div>
             <div id="greeting-card-text" class="greeting-card text-center text-dark d-flex justify-content-center">
-                <div id="inner-card-content" class="d-block">
-                    <h3 class="my-2">
-                        Happy St. Patrick's Day!
-                    </h3>
-                    <h3 class="text-dark">~ 2021 ~</h3>
-                    <div class="social-share">
-                        <p>Share with your friends!</p>
+                <div id="inner-card-content" class="d-block fw-bold">
+                    <p class="my-2 fs-3">
+                        Happy 
+                        <br>
+                        St. Patrick's Day 2021!
+                    </p>
+                    <div class="social-share my-3">
+                        <p>Share your Paddy Snap!</p>
 
-                        <!-- insert template tag for snap id after url ==> https://snap-paddy.herokuapp.com/show/ =>123456789<= -->
+                        <!-- insert template tag for snap id after url ==> u=https%3A//snap-paddy.herokuapp.com/show/ =>123456789<= -->
                         <a class="btn btn-outline-primary btn-lg"
                             href="https://www.facebook.com/sharer/sharer.php?u=https%3A//snap-paddy.herokuapp.com/show/"
                             target="blank">
@@ -26,7 +27,7 @@
                             <i class="fab fa-facebook fa-lg mx-2"></i>
                         </a>
 
-                        <!-- insert template tag for snap id after url ==> https://snap-paddy.herokuapp.com/ =>123456789<= -->
+                        <!-- insert template tag for snap id after url ==> https%3A//snap-paddy.herokuapp.com/ =>123456789<= -->
                         <a class="btn btn-outline-primary btn-lg"
                             href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0Ahttps%3A//snap-paddy.herokuapp.com/show/123456%0A%23hackathon%20%23codeinstitute"
                             target="blank">
@@ -43,8 +44,8 @@
     <div class="col-12 mt3">
         <div class="another-snap">
             <a href="{% url 'index' %}" class="btn"><button class="dark-text">
-                Another Paddy Snap
-            </button></a>
+                    Another Paddy Snap
+                </button></a>
         </div>
     </div>
 </div>

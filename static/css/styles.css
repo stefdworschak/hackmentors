@@ -8,28 +8,27 @@
     src: url('/static/fonts/CelticHand.ttf');
 }
 
-
-:root 
-{
+/* === COLOR VARIABLES === */
+:root {
     --light-green: rgb(2, 138, 25);
     --off-white: rgb(250, 235, 215);
     --light-shadow: rgba(0, 0, 0, .25);
     --dark-text: rgb(8, 8, 8);
 }
 
+/* === GLOBAL === */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html, body
-{
+html,
+body {
     overflow: hidden;
 }
 
-body
-{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,10 +42,25 @@ body
     letter-spacing: .8rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'headings', sans-serif;
+}
+
+h1,
+h2 {
+    color: var(--off-white);
+}
+
 button {
     padding: 25px;
 }
 
+/* === BACKGROUND BITS ===  */
 .another-snap {
     width: 100%;
     display: flex;
@@ -54,7 +68,24 @@ button {
     align-items: center;
 }
 
-/* ANIMATIONS */
+/* Corner frame */
+.corner-frame img {
+    overflow: hidden;
+    position: absolute;
+    width: 30%;
+}
+
+.top-left img {
+    top: -2%;
+    left: -1%;
+}
+
+.bottom-right img {
+    bottom: -3%;
+    right: -1%;
+}
+
+/* === ANIMATIONS === */
 
 #intro-animation {
     top: 0;
@@ -72,19 +103,6 @@ button {
 #main-body {
     width: 100%;
     height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'headings';
-}
-
-h1, h2 {
-    color: var(--off-white) ;
 }
 
 .dark-text {
@@ -172,14 +190,6 @@ h1, h2 {
     }
 }
 
-.greeting-card {
-    width: 600px;
-    height: 600px;
-    overflow: hidden;
-    background: url(/static/img/greetingCard/card-inner-bg-tr.png) no-repeat center center;
-    background-size: cover;
-}
-
 #greeting-card,
 #greeting-card-snap {
     width: 600px;
@@ -205,56 +215,9 @@ h1, h2 {
     transform: translateX(50%);
 }
 
-/* #greeting-card-text {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    text-align: center;
-} */
+/* === CARD CUTOUTS === */
 
-#inner-card-content {
-    height: fit-content;
-    margin-top: 20%;
-    width: 60%;
-}
-
-#greeting-card-cover {
-    background: url('/static/img/profile_img.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    transform-origin: left;
-    transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
-    z-index: 5;
-    animation: afterSnap 2.2s;
-}
-
-/* ANIMATION SHOWS CARD AFTER SNAP TAKEN */
-@keyframes afterSnap {
-
-    0%,
-    20% {
-        transform: rotateY(-180deg);
-    }
-}
-
-/* OPEN CARD ON HOVER */
-#greeting-card-snap:hover #greeting-card-cover {
-    transform: rotateY(-180deg);
-}
-
-/* END ANIMATIONS */
-
-
-/* CARD CUTOUTS */
-
-#greeting-card-cutout
-{
+#greeting-card-cutout {
     width: 100%;
     height: 100%;
     background: url('/static/img/cutouts/snap-test-3.png');
@@ -319,24 +282,73 @@ i {
     display: none;
 }
 
-/* Corner frame */
-.corner-frame img {
-    overflow: hidden;
+/* ANIMATION SHOWS CARD AFTER SNAP TAKEN */
+@keyframes afterSnap {
+
+    0%,
+    20% {
+        transform: rotateY(-180deg);
+    }
+}
+
+/* OPEN CARD ON HOVER */
+#greeting-card-snap:hover #greeting-card-cover {
+    transform: rotateY(-180deg);
+}
+
+/* END ANIMATIONS */
+
+/* ===OUTER CARD CONTENT=== */
+#greeting-card-cover {
+    background: url('/static/img/profile_img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
     position: absolute;
-    width: 30%;
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    z-index: 5;
+    animation: afterSnap 2.2s;
 }
 
-.top-left img {
-    top: -2%;
-    left: -1%;
+.shamrock-icon {
+    width: 25px;
+    height: 25px;
 }
 
-.bottom-right img
-{
-    bottom: -3%;
-    right: -1%;
+/* ===INNER CARD CONTENT=== */
+
+/* left content */
+.greeting-card {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    background: url(/static/img/greetingCard/card-inner-bg-tr.png) no-repeat center center;
+    background-size: cover;
+    border: 2px solid var(--light-green);
 }
 
+/* right content */
+#inner-card-content {
+    height: 100%;
+    width: 100%;
+    padding: 95px 110px;
+    border: 2px solid var(--light-green);
+}
+
+#inner-card-content {
+    color: var(--light-green);
+    font-size: 120%;
+}
+
+#inner-card-content>span {
+    font-family: 'headings', sans-serif;
+}
+
+/* === MEDIA QUERIES === */
 @media screen and (min-width: 1024px) {
     .corner-frame img {
         width: 25%;
