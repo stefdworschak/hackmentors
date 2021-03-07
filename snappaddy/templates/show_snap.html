@@ -18,20 +18,19 @@
                     </p>
                     <div class="social-share my-3">
                         <p>Share your Paddy Snap with friends<span>!</span></p>
-
+                        <i class="fas fa-share-alt fa-lg mx-2"></i>
                         <!-- insert template tag for snap id after url ==> u=https%3A//snap-paddy.herokuapp.com/show/ =>123456789<= -->
                         <a class="btn btn-outline-primary btn-lg"
-                            href="https://www.facebook.com/sharer/sharer.php?u=https%3A//snap-paddy.herokuapp.com/show/"
+                            href="https://www.facebook.com/sharer/sharer.php?u={{host}}show/{{snap.uuid}}"
                             target="blank">
-                            <i class="fas fa-share-alt fa-lg mx-2"></i>
                             <i class="fab fa-facebook fa-lg mx-2"></i>
                         </a>
 
                         <!-- insert template tag for snap id after url ==> https%3A//snap-paddy.herokuapp.com/ =>123456789<= -->
                         <a class="btn btn-outline-primary btn-lg"
-                            href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0Ahttps%3A//snap-paddy.herokuapp.com/show/123456%0A%23hackathon%20%23codeinstitute"
+                            href="https://twitter.com/intent/tweet?text=Checkout%20my%20awesome%20St%20Patrick's%20day%20themed%20photobooth%20snap!%20%0A{{host}}show/{{snap.uuid}}%0A%23hackathon%20%23codeinstitute"
                             target="blank">
-                            <i class="fas fa-share-alt fa-lg mx-2"></i>
+                            
                             <i class="fab fa-twitter fa-lg mx-2"></i>
                         </a>
                     </div>
