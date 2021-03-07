@@ -46,9 +46,18 @@ body {
     letter-spacing: .8rem;
 }
 
+body a
+{
+    text-decoration: none;
+}
+
 #main-body {
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
 }
 
 .dark-text {
@@ -69,33 +78,12 @@ h2 {
     color: var(--off-white);
 }
 
-button {
-    padding: 25px;
-}
-
 /* === BACKGROUND BITS ===  */
-.another-snap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 /* Corner frame */
 .corner-frame img {
-    overflow: hidden;
-    position: absolute;
-    width: 30%;
-}
-
-.top-left img {
-    top: -2%;
-    left: -1%;
-}
-
-.bottom-right img {
-    bottom: -3%;
-    right: -1%;
+    display: none;
 }
 
 /* === INTRO ANIMATIONS === */
@@ -230,23 +218,28 @@ button {
         opacity: 1;
     }
 }
-
-/* Slide Card on Open after SNAP taken */
-#greeting-card-snap
+body .container-fluid
 {
-    animation: afterSnapSlide 2.2s forwards;
-    animation-delay: .6s;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
-
-@keyframes afterSnapSlide {
-
-    0%
-    {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(50%);
-    }
+body .container-fluid .row,
+body .container-fluid .row .col-12
+{
+    margin: 0;
+    padding: 0;
+}
+.has-greeting-card
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    background: url(/static/img/main-frames/mobile-frame.png) no-repeat center center;
+    background-size: cover;
 }
 
 /* === CARD CUTOUTS === */
@@ -295,16 +288,128 @@ button {
     display: block;
 }
 
-#startbutton,
-#clearbutton,
-#snapbutton {
-    margin-top: 20px;
-    font-size: 24px;
-    padding: 10px 20px
+/* === ON SHOW CARD BUTTON WRAPPER === */
+.another-snap {
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-i {
-    margin-right: 10px;
+/* === BUTTONS === */
+
+#snap-buttons
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+#startbutton,
+#clearbutton,
+#snapbutton
+{
+    position: absolute;
+}
+
+#startbutton,
+#clearbutton,
+#snapbutton,
+#take-new-snap,
+#share-to-facebook,
+#share-to-twitter{
+    text-decoration: none;
+    font-size: 40px;
+    color: #014d0e;
+    transition: .3s ease-in-out;
+}
+
+#startbutton:hover,
+#clearbutton:hover,
+#snapbutton:hover,
+#take-new-snap:hover,
+#share-to-facebook:hover,
+#share-to-twitter:hover
+{
+    border-radius: 35px;
+}
+
+#startbutton,
+#clearbutton,
+#snapbutton,
+#take-new-snap,
+#share-to-facebook,
+#share-to-twitter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: none;
+    border-radius: 16px;
+}
+
+#take-new-snap
+{
+    margin: 10px;
+    background: #FF9900;
+    box-shadow:  5px 5px 10px #492c00,
+                -2px -2px 10px #6d4509;
+}
+
+#share-to-facebook
+{
+    margin: 10px;
+    color: #0c87ef;
+    background: #fafafa;
+    box-shadow:  5px 5px 10px #292929,
+                -2px -2px 10px #6e6565;
+}
+
+#share-to-twitter
+{
+    margin: 10px;
+    background: #00A2F3;
+    color: #fafafa;
+    box-shadow:  5px 5px 10px #013853,
+                -2px -2px 10px #0c567a;
+}
+
+#startbutton
+{
+    margin-top: 120px;
+    background: #FF9900;
+    box-shadow:  5px 5px 10px #492c00,
+                -2px -2px 10px #6d4509;
+}
+
+#clearbutton
+{
+    top: 30px;
+    right: 35%;
+    background: #f14a17;
+    box-shadow:  5px 5px 10px #601800,
+                -2px -2px 10px #8f503b;
+}
+
+#snapbutton
+{
+    top: 30px;
+    left: 35%;
+    background: #ccb100;
+    box-shadow:  5px 5px 10px #726300,
+                -2px -2px 5px #8a7d2d;
+}
+
+i
+{
+    margin-bottom: 2px;
 }
 
 #clearbutton,
@@ -336,14 +441,21 @@ i {
     animation-delay: .6s;
 }
 
-/* ANIMATION OPENS CARD AFTER SNAP TAKEN */
-@keyframes afterSnap {
+/* #greeting-card-snap
+{
+    animation: cardFlip 2.2s forwards;
+    animation-delay: 2s;
+}
 
+@keyframes cardFlip
+{
     100%
     {
-        transform: rotateY(-180deg);
+        transform: rotateY(180deg);
     }
-}
+
+} */
+    
 
 .shamrock-icon {
     width: 25px;
@@ -375,29 +487,97 @@ i {
     font-size: 120%;
 }
 
+.social-share
+{
+    margin: 20px 0 10px 0;
+    border-radius: 16px;
+    background: var(--light-green);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 .social-share>p {
     font-family: 'irish', sans-serif;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 40px;
+    margin: 0;
 }
 
 .social-share>p span {
     font-family: sans-serif;
+    line-height: 30px;
 }
 
 /* === MEDIA QUERIES === */
+
+@media screen and (min-width: 768px)
+{
+    .has-greeting-card
+    {
+        background-size: contain;
+    }
+}
 @media screen and (min-width: 1024px) {
+    .has-greeting-card
+    {
+        background: url(/static/img/main-frames/desktop-frame.png) no-repeat center center;
+        background-size: auto;
+    }
     .corner-frame img {
+        display: block;
+        position: absolute;
+        overflow: hidden;
         width: 25%;
     }
 
     .top-left img {
-        top: -3%;
-        left: -3%;
+        top: -13%;
+        left: -6%;
     }
 
     .bottom-right img {
-        bottom: -3%;
-        right: -3%;
+        bottom: -13%;
+        right: -6%;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    /* === PC VIEW ANIMATIONS === */
+
+    #greeting-card-cover{
+        transform-origin: left;
+        transform-style: preserve-3d;
+        animation: afterSnap 2.2s forwards;
+        animation-delay: .6s;
+    }
+
+    /* ANIMATION OPENS CARD AFTER SNAP TAKEN */
+    @keyframes afterSnap {
+        100%
+        {
+            transform: rotateY(-180deg);
+        }
+    }
+
+    /* Slide Card on Open after SNAP taken */
+    #greeting-card-snap
+    {
+        animation: afterSnapSlide 2.2s forwards;
+        animation-delay: .6s;
+    }
+
+    @keyframes afterSnapSlide {
+
+        0%
+        {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(50%);
+        }
     }
 }
