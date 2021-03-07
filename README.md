@@ -1,7 +1,8 @@
 # ~ Paddy Snap ~
 <br>
-<div align="center">
-<img src="https://starwarsanon.files.wordpress.com/2016/09/leprechaun-gold-pot-88489.gif" alt="St Patrick's Day gif"/>
+<div align="center"; display=flex;>
+<img width="30%" src="https://starwarsanon.files.wordpress.com/2016/09/leprechaun-gold-pot-88489.gif" alt="St Patrick's Day gif"/>
+<img width="60%" src="static/img/run-reverse.gif" alt="St Patrick's Day gif"/>
 </div>
 <br>
 
