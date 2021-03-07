@@ -336,7 +336,7 @@ body .container-fluid .row .col-12
 #share-to-facebook:hover,
 #share-to-twitter:hover
 {
-    border-radius: 35px;
+    border-radius: 50%;
 }
 
 #startbutton,
@@ -349,15 +349,15 @@ body .container-fluid .row .col-12
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
-    width: 70px;
+    height: 140px;
+    width: 140px;
     border: none;
     border-radius: 16px;
 }
 
 #take-new-snap
 {
-    margin: 10px;
+    margin: 16px;
     background: #FF9900;
     box-shadow:  5px 5px 10px #492c00,
                 -2px -2px 10px #6d4509;
@@ -365,7 +365,7 @@ body .container-fluid .row .col-12
 
 #share-to-facebook
 {
-    margin: 10px;
+    margin: 16px;
     color: #0c87ef;
     background: #fafafa;
     box-shadow:  5px 5px 10px #292929,
@@ -374,7 +374,7 @@ body .container-fluid .row .col-12
 
 #share-to-twitter
 {
-    margin: 10px;
+    margin: 16px;
     background: #00A2F3;
     color: #fafafa;
     box-shadow:  5px 5px 10px #013853,
@@ -425,6 +425,28 @@ i
 
 /* ===OUTER CARD CONTENT=== */
 
+#show-snap-wrap
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 120px 0;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    animation: slideDownOnShowSnap 2.2s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes slideDownOnShowSnap
+{
+    100%
+    {
+        bottom: 0;
+    }
+}
+
 #greeting-card-cover {
     background: url('/static/img/profile_img.png');
     background-repeat: no-repeat;
@@ -437,11 +459,9 @@ i
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
     z-index: 5;
-    animation: afterSnap 2.2s forwards;
-    animation-delay: .6s;
 }
 
-/* #greeting-card-snap
+.slide-cover
 {
     animation: cardFlip 2.2s forwards;
     animation-delay: 2s;
@@ -451,10 +471,10 @@ i
 {
     100%
     {
-        transform: rotateY(180deg);
+        transform: translateY(-100%);
     }
 
-} */
+}
     
 
 .shamrock-icon {
@@ -501,27 +521,45 @@ i
 
 .social-share>p {
     font-family: 'irish', sans-serif;
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 900;
-    line-height: 40px;
+    line-height: 20px;
     margin: 0;
 }
 
 .social-share>p span {
     font-family: sans-serif;
-    line-height: 30px;
+    line-height: 20px;
 }
 
 /* === MEDIA QUERIES === */
 
 @media screen and (min-width: 768px)
 {
+    #startbutton,
+    #clearbutton,
+    #snapbutton,
+    #take-new-snap,
+    #share-to-facebook,
+    #share-to-twitter
+    {
+        height: 70px;
+        width: 70px;
+    }
+    #show-snap-wrap
+    {
+        padding: 40px 0;
+    }
     .has-greeting-card
     {
         background-size: contain;
     }
 }
 @media screen and (min-width: 1024px) {
+    #show-snap-wrap
+    {
+        padding: 0 0;
+    }
     .has-greeting-card
     {
         background: url(/static/img/main-frames/desktop-frame.png) no-repeat center center;
@@ -546,6 +584,17 @@ i
 }
 @media screen and (min-width: 1200px)
 {
+    /* === SOCIAL MEDIA SHARE LINKS === */
+
+    .social-share>p {
+        font-size: 42px;
+        line-height: 40px;
+    }
+    
+    .social-share>p span {
+        line-height: 30px;
+    }
+
     /* === PC VIEW ANIMATIONS === */
 
     #greeting-card-cover{
