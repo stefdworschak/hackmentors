@@ -1,7 +1,6 @@
-# ~ Paddy Snap ~
+# ~* PADDY SNAP *~
 
-<br>
-<div align="center"; display=flex;>
+<div align="center";>
 <img width="30%" src="https://starwarsanon.files.wordpress.com/2016/09/leprechaun-gold-pot-88489.gif" alt="St Patrick's Day gif"/>
 <img width="60%" src="static/img/run-reverse.gif" alt="St Patrick's Day gif"/>
 </div>
@@ -13,18 +12,18 @@ St. Patrick's Day themed app for the [Code Insititute](https://codeinstitute.net
 
 The app allows you to choose a variety of 'photobooth' backgrounds, take a photo with your webcam and share to various social media sites.
 
-### Built with:
+### Built with:-
 
 ![HTML](https://img.shields.io/static/v1?label=HTML&message=5&color=E34F26&style=for-the-badge&logo=html5)
 ![CSS](https://img.shields.io/static/v1?label=CSS&message=3&color=1572B6&style=for-the-badge&logo=css3)
 ![Javascript](https://img.shields.io/static/v1?label=JavaScript&message=ES8&style=for-the-badge&color=F7DF1E&logo=JavaScript)
 ![Python](https://img.shields.io/static/v1?label=Python&style=for-the-badge&message=3&color=3776AB&logo=PYTHON)
 
-### Framework:
+### Framework:-
 
 ![Django](https://img.shields.io/static/v1?label=Django&style=for-the-badge&message=3.1&color=092E20&logo=django)
 
-### Powered by:
+### Powered by:-
 
 [Stefan Dworschak](https://github.com/stefdworschak) | [John Traas](https://github.com/Jays-T) | [Jim Morel](https://github.com/JimLynx)
 
