@@ -127,6 +127,7 @@ h1, h2 {
     height: 300px;
     width: 500px;
     right: 50%;
+    transform-style: preserve-3d;
     transition: opacity .3s ease-in-out;
     animation: runLeprechaunRun 4s ease-in-out 1;
 }
