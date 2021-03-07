@@ -34,11 +34,10 @@ The app allows you to choose a variety of 'photobooth' backgrounds, take a photo
 
 #### Media
 
-Image png's from various sources on [Hi-Clipart](https://www.hiclipart.com/) and edited for use on the app with [Adobe PhotoShop CS6](https://www.adobe.com/ie/products/photoshop.html)
+- Image png's from various sources on [Hi-Clipart](https://www.hiclipart.com/) and edited for use on the app with [Adobe PhotoShop CS6](https://www.adobe.com/ie/products/photoshop.html)
+- Inner frame background image from [HERE](https://gallery.yopriceville.com/Backgrounds/St_Patricks_Day_Shamrock_Background#.YETMnmj7SUk)
 
 #### Font
 
 - Headings: [Leprechaun Hats](https://see.fontimg.com/api/renderfont4/vLy/eyJyIjoiZnMiLCJoIjo5NSwidyI6MTAwMCwiZnMiOjk1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TGVwcmVjaGF1biBIYXRz/leprechaun-hats.png) by [ArtsyLady](https://www.fontspace.com/artsylady)
 - Body Text: [Celtic Hand](https://www.1001freefonts.com/celtic-hand.font) by [Dieter Steffmann](http://moorstation.org/typoasis/designers/steffmann/index.htm)
-
-
