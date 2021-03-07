@@ -1,4 +1,4 @@
-# ~* PADDY SNAP *~
+# * PADDY SNAP *
 
 <div align="center";>
 <img width="30%" src="https://starwarsanon.files.wordpress.com/2016/09/leprechaun-gold-pot-88489.gif" alt="St Patrick's Day gif"/>
