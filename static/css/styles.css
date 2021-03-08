@@ -283,6 +283,11 @@ body .container-fluid .row .col-12
     transform: translateX(-50%);
 }
 
+.greeting-card-image-center {
+    left: auto;
+    transform: none;
+}
+
 #greeting-card-canvas,
 #greeting-card-image {
     height: 100%;
