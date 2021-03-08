@@ -196,6 +196,7 @@ h2 {
 
 #greeting-card,
 #greeting-card-snap {
+    background: transparent;
     width: 600px;
     height: 600px;
     position: relative;
