@@ -7,6 +7,7 @@
     font-family: 'body-text';
     src: url('/static/fonts/CelticHand.ttf');
 }
+
 @font-face {
     font-family: 'irish';
     src: url('/static/fonts/irish.ttf');
@@ -18,7 +19,7 @@
     --off-white: rgb(250, 235, 215);
     --light-shadow: rgba(0, 0, 0, .25);
     --dark-text: rgb(8, 8, 8);
-    
+
     --screen-size: 500px;
 }
 
@@ -48,8 +49,7 @@ body {
     letter-spacing: .8rem;
 }
 
-body a
-{
+body a {
     text-decoration: none;
 }
 
@@ -190,8 +190,7 @@ h2 {
 
 /* === GREETING CARD === */
 
-.card 
-{
+.card {
     min-width: var(--screen-size);
     min-height: var(--screen-size);
 }
@@ -210,32 +209,30 @@ h2 {
     animation: fadeInCard 3s forwards;
 }
 
-@keyframes fadeInCard
-{
-    0%
-    {
+@keyframes fadeInCard {
+    0% {
         opacity: 0;
     }
-    100%
-    {
+
+    100% {
         opacity: 1;
     }
 }
-body .container-fluid
-{
+
+body .container-fluid {
     padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
 }
+
 body .container-fluid .row,
-body .container-fluid .row .col-12
-{
+body .container-fluid .row .col-12 {
     margin: 0;
     padding: 0;
 }
-.has-greeting-card
-{
+
+.has-greeting-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,8 +304,7 @@ body .container-fluid .row .col-12
 
 /* === BUTTONS === */
 
-#snap-buttons
-{
+#snap-buttons {
     position: relative;
     width: 100%;
     display: flex;
@@ -319,8 +315,7 @@ body .container-fluid .row .col-12
 
 #startbutton,
 #clearbutton,
-#snapbutton
-{
+#snapbutton {
     position: absolute;
 }
 
@@ -329,7 +324,7 @@ body .container-fluid .row .col-12
 #snapbutton,
 #take-new-snap,
 #share-to-facebook,
-#share-to-twitter{
+#share-to-twitter {
     text-decoration: none;
     font-size: 40px;
     color: #014d0e;
@@ -341,8 +336,7 @@ body .container-fluid .row .col-12
 #snapbutton:hover,
 #take-new-snap:hover,
 #share-to-facebook:hover,
-#share-to-twitter:hover
-{
+#share-to-twitter:hover {
     border-radius: 50%;
 }
 
@@ -351,8 +345,7 @@ body .container-fluid .row .col-12
 #snapbutton,
 #take-new-snap,
 #share-to-facebook,
-#share-to-twitter
-{
+#share-to-twitter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,60 +355,53 @@ body .container-fluid .row .col-12
     border-radius: 16px;
 }
 
-#take-new-snap
-{
+#take-new-snap {
     margin: 16px;
     background: #FF9900;
-    box-shadow:  5px 5px 10px #492c00,
-                -2px -2px 10px #6d4509;
+    box-shadow: 5px 5px 10px #492c00,
+        -2px -2px 10px #6d4509;
 }
 
-#share-to-facebook
-{
+#share-to-facebook {
     margin: 16px;
     color: #0c87ef;
     background: #fafafa;
-    box-shadow:  5px 5px 10px #292929,
-                -2px -2px 10px #6e6565;
+    box-shadow: 5px 5px 10px #292929,
+        -2px -2px 10px #6e6565;
 }
 
-#share-to-twitter
-{
+#share-to-twitter {
     margin: 16px;
     background: #00A2F3;
     color: #fafafa;
-    box-shadow:  5px 5px 10px #013853,
-                -2px -2px 10px #0c567a;
+    box-shadow: 5px 5px 10px #013853,
+        -2px -2px 10px #0c567a;
 }
 
-#startbutton
-{
+#startbutton {
     margin-top: 120px;
     background: #FF9900;
-    box-shadow:  5px 5px 10px #492c00,
-                -2px -2px 10px #6d4509;
+    box-shadow: 5px 5px 10px #492c00,
+        -2px -2px 10px #6d4509;
 }
 
-#clearbutton
-{
+#clearbutton {
     top: 30px;
     right: 35%;
     background: #f14a17;
-    box-shadow:  5px 5px 10px #601800,
-                -2px -2px 10px #8f503b;
+    box-shadow: 5px 5px 10px #601800,
+        -2px -2px 10px #8f503b;
 }
 
-#snapbutton
-{
+#snapbutton {
     top: 30px;
     left: 35%;
     background: #ccb100;
-    box-shadow:  5px 5px 10px #726300,
-                -2px -2px 5px #8a7d2d;
+    box-shadow: 5px 5px 10px #726300,
+        -2px -2px 5px #8a7d2d;
 }
 
-i
-{
+i {
     margin-bottom: 2px;
 }
 
@@ -432,8 +418,7 @@ i
 
 /* ===OUTER CARD CONTENT=== */
 
-#show-snap-wrap
-{
+#show-snap-wrap {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -446,10 +431,8 @@ i
     animation-delay: 2s;
 }
 
-@keyframes slideDownOnShowSnap
-{
-    100%
-    {
+@keyframes slideDownOnShowSnap {
+    100% {
         bottom: 0;
     }
 }
@@ -468,21 +451,18 @@ i
     z-index: 5;
 }
 
-.slide-cover
-{
+.slide-cover {
     animation: cardFlip 2.2s forwards;
     animation-delay: 2s;
 }
 
-@keyframes cardFlip
-{
-    100%
-    {
+@keyframes cardFlip {
+    100% {
         transform: translateY(-100%);
     }
 
 }
-    
+
 
 .shamrock-icon {
     width: 25px;
@@ -514,8 +494,7 @@ i
     font-size: 120%;
 }
 
-.social-share
-{
+.social-share {
     margin: 20px 0 10px 0;
     border-radius: 16px;
     background: var(--light-green);
@@ -541,10 +520,8 @@ i
 
 /* === MEDIA QUERIES === */
 
-@media screen and (min-width: 768px)
-{
-    #snapbutton
-    {
+@media screen and (min-width: 768px) {
+    #snapbutton {
         height: 120px;
         width: 120px;
         margin-top: 160px !important;
@@ -560,26 +537,27 @@ i
         margin-top: 10px !important;
     }
 
-    #show-snap-wrap
-    {
+    #show-snap-wrap {
         padding: 40px 0;
     }
-    .has-greeting-card
-    {
+
+    .has-greeting-card {
         background-size: contain;
     }
+
     .greeting-card-col {
         padding-top: 160px !important;
     }
 }
+
 @media screen and (min-width: 1024px) {
+
     #startbutton,
     #take-new-snap,
     #snapbutton,
     #clearbutton,
     #share-to-facebook,
-    #share-to-twitter
-    {
+    #share-to-twitter {
         height: 70px;
         width: 70px;
         margin-bottom: 100px !important;
@@ -587,22 +565,23 @@ i
 
     #clearbutton,
     #snapbutton,
-    #show-snap-wrap
-    {
+    #show-snap-wrap {
         padding: 0 0;
     }
-    .has-greeting-card
-    {
-        background: url(/static/img/main-frames/desktop-frame-centered.png) no-repeat center center;
+
+    .has-greeting-card {
+        background: url(/static/img/main-frames/desktop-frame-v8.png) no-repeat center center;
         background-size: auto;
         height: 100vh;
     }
+
     .corner-frame img {
         display: block;
         position: absolute;
         overflow: hidden;
         width: 25%;
     }
+
     .greeting-card-col {
         padding-top: 40px !important;
     }
@@ -617,22 +596,22 @@ i
         right: -6%;
     }
 }
-@media screen and (min-width: 1200px)
-{
+
+@media screen and (min-width: 1200px) {
     /* === SOCIAL MEDIA SHARE LINKS === */
 
     .social-share>p {
         font-size: 42px;
         line-height: 40px;
     }
-    
+
     .social-share>p span {
         line-height: 30px;
     }
 
     /* === PC VIEW ANIMATIONS === */
 
-    #greeting-card-cover{
+    #greeting-card-cover {
         transform-origin: left;
         transform-style: preserve-3d;
         animation: afterSnap 2.2s forwards;
@@ -641,25 +620,23 @@ i
 
     /* ANIMATION OPENS CARD AFTER SNAP TAKEN */
     @keyframes afterSnap {
-        100%
-        {
+        100% {
             transform: rotateY(-180deg);
         }
     }
 
     /* Slide Card on Open after SNAP taken */
-    #greeting-card-snap
-    {
+    #greeting-card-snap {
         animation: afterSnapSlide 2.2s forwards;
         animation-delay: .6s;
     }
 
     @keyframes afterSnapSlide {
 
-        0%
-        {
+        0% {
             transform: translateX(0);
         }
+
         100% {
             transform: translateX(50%);
         }
