@@ -5,7 +5,7 @@
 
 
 <!-- COMMENTED OUT THE INTRO ANIMATION FOR NOW -->
-
+<!-- 
 <div id="intro-animation" class="container-fluid">
     <h1>Paddy Snap</h1>
     <div id="running-leprechaun">
@@ -15,7 +15,7 @@
     <div id="chasing-paddy">
         <img src="/static/img/paddy_chasing.webp" alt="paddy running">
     </div>
-</div>    
+</div>     -->
 
 <div class="has-greeting-card">
     <div class="row">
@@ -233,7 +233,7 @@ function toggleReset(){
     if($(startbutton).css('display') != 'none'){
         $(video).hide();
         $(photo).show();
-        if(photo.width < width){
+        if(photo.width < width && photo.width != 0){
             photo.classList.add('greeting-card-image-center');
         }
         $(startbutton).hide();

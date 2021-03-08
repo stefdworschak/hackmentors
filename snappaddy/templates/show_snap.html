@@ -48,6 +48,7 @@
 
 {% block js %}
 <script>
+    let width = 500;
     checkMobile();
     window.onresize = function(){
         console.log("Resizing")
@@ -91,7 +92,7 @@
         }
 
         const photo = document.getElementById('greeting-card-image');
-        if(photo.width < width){
+        if(photo.width < width && photo.width != 0){
             photo.classList.add('greeting-card-image-center');
         }
     }
