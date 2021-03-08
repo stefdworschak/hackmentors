@@ -130,7 +130,7 @@ function checkMobile(){
         height = window.innerWidth - 300;
         document.getElementById('greeting-card').style.width = width + 'px';
         document.getElementById('greeting-card').style.height = height + 'px';
-        $('button i').addClass('fa-2x');
+        // $('button i').addClass('fa-2x');
     }
     else if(isMobile.any()){
         console.log( window.innerWidth);
@@ -138,11 +138,11 @@ function checkMobile(){
         height = window.innerWidth - 80;
         document.getElementById('greeting-card').style.width = width + 'px';
         document.getElementById('greeting-card').style.height = height + 'px';
-        $('button i').addClass('fa-2x');
+        // $('button i').addClass('fa-2x');
     } else {
         document.getElementById('greeting-card').style.width = '500px';
         document.getElementById('greeting-card').style.height = '500px';
-        $('button i').removeClass('fa-2x');
+        // $('button i').removeClass('fa-2x');
     }
 }
 
