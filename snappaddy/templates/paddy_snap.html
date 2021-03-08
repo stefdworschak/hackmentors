@@ -19,7 +19,7 @@
 
 <div class="has-greeting-card">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 greeting-card-col">
             <div class="card" id="greeting-card" class="greeting-card">
                 <div id="greeting-card-cutout" class="greeting-card"></div>
                 <div class="camera" id="greeting-card-camera">
@@ -90,7 +90,61 @@ let inputSnapFile = null;
 let cutout = null;
 let snapForm = null;
 
+checkMobile();
+window.onresize = function(){
+    console.log("Resizing")
+    checkMobile();
+}
+
 startup();
+
+function checkMobile(){
+    var isTablet = function(){
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+        return isTablet;
+    }
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    if (isTablet()){
+        width = window.innerWidth - 300;
+        height = window.innerWidth - 300;
+        document.getElementById('greeting-card').style.width = width + 'px';
+        document.getElementById('greeting-card').style.height = height + 'px';
+        $('button i').addClass('fa-2x');
+    }
+    else if(isMobile.any()){
+        console.log( window.innerWidth);
+        width = window.innerWidth - 80;
+        height = window.innerWidth - 80;
+        document.getElementById('greeting-card').style.width = width + 'px';
+        document.getElementById('greeting-card').style.height = height + 'px';
+        $('button i').addClass('fa-2x');
+    } else {
+        document.getElementById('greeting-card').style.width = '500px';
+        document.getElementById('greeting-card').style.height = '500px';
+        $('button i').removeClass('fa-2x');
+    }
+}
 
 function startup() {
     video = document.getElementById('video');
@@ -119,7 +173,7 @@ function startup() {
     video.addEventListener('canplay', function(ev){
         if (!streaming) {
             height = video.videoHeight / (video.videoWidth/width);
-        
+            
             video.setAttribute('height', '100%');
             canvas.setAttribute('width', video.videoWidth);
             canvas.setAttribute('height', video.videoHeight);
@@ -157,7 +211,6 @@ function takepicture() {
     if(video.videoWidth > width){
         drawStartX = ((width - video.videoWidth) / 2);
     }
-    console.log(drawStartX)
 
     context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 

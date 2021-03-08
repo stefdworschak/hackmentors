@@ -45,3 +45,47 @@
     </div>
 </div>
 {% endblock %}
+
+{% block js %}
+<script>
+    checkMobile();
+    window.onresize = function(){
+        console.log("Resizing")
+        checkMobile();
+    }
+    function checkMobile(){
+        var isTablet = function(){
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+            return isTablet;
+        }
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+        console.log(isTablet)
+        if (isTablet() || isMobile.any()){
+            width = window.innerWidth - 300;
+            height = window.innerWidth - 300;
+            document.getElementById('greeting-card-snap').style.width = width + 'px'
+            document.getElementById('greeting-card-snap').style.height = height + 'px'
+        }    
+    }
+    </script>
+{% endblock %}
