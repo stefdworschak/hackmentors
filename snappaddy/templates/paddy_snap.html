@@ -75,8 +75,8 @@
 </script>
 <script>
 
-let width = 600;    // We will scale the photo width to this
-let height = 600;     // This will be computed based on the input stream
+let width = 500;    // We will scale the photo width to this
+let height = 500;     // This will be computed based on the input stream
 
 let streaming = false;
 
@@ -233,6 +233,9 @@ function toggleReset(){
     if($(startbutton).css('display') != 'none'){
         $(video).hide();
         $(photo).show();
+        if(photo.width < width){
+            photo.classList.add('greeting-card-image-center');
+        }
         $(startbutton).hide();
         $(clearbutton).css('display', 'inline-block');
         $(snapForm).css('display', 'inline-block');
