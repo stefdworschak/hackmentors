@@ -233,12 +233,13 @@ function toggleReset(){
     if($(startbutton).css('display') != 'none'){
         $(video).hide();
         $(photo).show();
-        if(photo.width < width && photo.width != 0){
-            photo.classList.add('greeting-card-image-center');
-        }
+        
         $(startbutton).hide();
         $(clearbutton).css('display', 'inline-block');
         $(snapForm).css('display', 'inline-block');
+        if(video.videoWidth < width){
+            photo.classList.add('greeting-card-image-center');
+        }
     } else {
         $(video).show();
         $(photo).hide();
