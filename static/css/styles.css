@@ -558,7 +558,6 @@ i {
     #snapbutton {
         height: 120px;
         width: 120px;
-        margin-top: 160px !important;
     }
 
     #share-to-facebook,
@@ -574,7 +573,7 @@ i {
     #snapbutton
     {
         height: 100px;
-        width: 140px
+        width: 140px;
     }
 
     #startbutton
