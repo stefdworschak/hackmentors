@@ -18,6 +18,8 @@
     --off-white: rgb(250, 235, 215);
     --light-shadow: rgba(0, 0, 0, .25);
     --dark-text: rgb(8, 8, 8);
+    
+    --screen-size: 500px;
 }
 
 /* === GLOBAL === */
@@ -104,8 +106,8 @@ h2 {
 #intro-animation h1 {
     font-size: 4rem;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    border-top: 2px solid var(--off-white);
-    border-bottom: 2px solid var(--off-white);
+    border-top: 1px solid var(--off-white);
+    border-bottom: 1px solid var(--off-white);
     animation: scrollLetters 2.8s forwards;
     animation-delay: 1.15s;
 }
@@ -190,15 +192,15 @@ h2 {
 
 .card 
 {
-    min-width: 600px;
-    min-height: 600px;
+    min-width: var(--screen-size);
+    min-height: var(--screen-size);
 }
 
 #greeting-card,
 #greeting-card-snap {
     background: transparent;
-    width: 600px;
-    height: 600px;
+    width: var(--screen-size);
+    height: var(--screen-size);
     position: relative;
     margin: 0 auto;
     transform-style: preserve-3d;
@@ -487,12 +489,12 @@ i
 
 /* left content */
 .greeting-card {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background: url(/static/img/greetingCard/card-inner-bg.png) no-repeat center center;
     background-size: cover;
-    /* border: 2px solid var(--light-green); */
+    border: 1px solid var(--light-green);
 }
 
 /* right content */
@@ -500,7 +502,7 @@ i
     height: 100%;
     width: 100%;
     padding: 95px 110px;
-    /* border: 2px solid var(--light-green); */
+    border: 1px solid var(--light-green);
 }
 
 #inner-card-content {
@@ -537,16 +539,23 @@ i
 
 @media screen and (min-width: 768px)
 {
-    #startbutton,
+    #snapbutton
+    {
+        height: 120px;
+        width: 120px;
+        margin-top: 160px !important;
+    }
+
     #clearbutton,
     #snapbutton,
-    #take-new-snap,
     #share-to-facebook,
-    #share-to-twitter
-    {
-        height: 70px;
-        width: 70px;
+    #share-to-twitter,
+    #take-new-snap {
+        height: 120px;
+        width: 120px;
+        margin-top: 10px !important;
     }
+
     #show-snap-wrap
     {
         padding: 40px 0;
@@ -555,8 +564,25 @@ i
     {
         background-size: contain;
     }
+    .greeting-card-col {
+        padding-top: 160px !important;
+    }
 }
 @media screen and (min-width: 1024px) {
+    #startbutton,
+    #take-new-snap,
+    #snapbutton,
+    #clearbutton,
+    #share-to-facebook,
+    #share-to-twitter
+    {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 100px !important;
+    }
+
+    #clearbutton,
+    #snapbutton,
     #show-snap-wrap
     {
         padding: 0 0;
@@ -572,6 +598,9 @@ i
         position: absolute;
         overflow: hidden;
         width: 25%;
+    }
+    .greeting-card-col {
+        padding-top: 40px !important;
     }
 
     .top-left img {
