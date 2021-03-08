@@ -79,13 +79,16 @@
                 return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
             }
         };
-        console.log(isTablet)
+
         if (isTablet() || isMobile.any()){
             width = window.innerWidth - 300;
             height = window.innerWidth - 300;
-            document.getElementById('greeting-card-snap').style.width = width + 'px'
-            document.getElementById('greeting-card-snap').style.height = height + 'px'
-        }    
+            document.getElementById('greeting-card-snap').style.width = width + 'px';
+            document.getElementById('greeting-card-snap').style.height = height + 'px';
+            $('button i').addClass('fa-2x');
+        } else {
+            $('button i').removeClass('fa-2x');
+        }
     }
     </script>
 {% endblock %}

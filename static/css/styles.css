@@ -489,8 +489,8 @@ i
 
 /* left content */
 .greeting-card {
-    width: var(--screen-size);
-    height: var(--screen-size);
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background: url(/static/img/greetingCard/card-inner-bg.png) no-repeat center center;
     background-size: cover;
@@ -539,17 +539,23 @@ i
 
 @media screen and (min-width: 768px)
 {
-    #startbutton,
-    #clearbutton,
-    #snapbutton,
-    #take-new-snap,
-    #share-to-facebook,
-    #share-to-twitter
+    #snapbutton
     {
-        /* height: 70px;
-        width: 70px; */
+        height: 120px;
+        width: 120px;
         margin-top: 160px !important;
     }
+
+    #clearbutton,
+    #snapbutton,
+    #share-to-facebook,
+    #share-to-twitter,
+    #take-new-snap {
+        height: 120px;
+        width: 120px;
+        margin-top: 10px !important;
+    }
+
     #show-snap-wrap
     {
         padding: 40px 0;
@@ -564,16 +570,19 @@ i
 }
 @media screen and (min-width: 1024px) {
     #startbutton,
-    #clearbutton,
-    #snapbutton,
     #take-new-snap,
+    #snapbutton,
+    #clearbutton,
     #share-to-facebook,
     #share-to-twitter
     {
         height: 70px;
         width: 70px;
-        margin-top: 100px !important;
+        margin-bottom: 100px !important;
     }
+
+    #clearbutton,
+    #snapbutton,
     #show-snap-wrap
     {
         padding: 0 0;
