@@ -284,8 +284,8 @@ body .container-fluid .row .col-12
 }
 
 .greeting-card-image-center {
-    left: auto;
-    transform: none;
+    left: auto !important;
+    transform: none !important;
 }
 
 #greeting-card-canvas,
