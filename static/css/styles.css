@@ -491,7 +491,7 @@ i
     overflow: hidden;
     background: url(/static/img/greetingCard/card-inner-bg-tr.png) no-repeat center center;
     background-size: cover;
-    border: 2px solid var(--light-green);
+    /* border: 2px solid var(--light-green); */
 }
 
 /* right content */
@@ -499,7 +499,7 @@ i
     height: 100%;
     width: 100%;
     padding: 95px 110px;
-    border: 2px solid var(--light-green);
+    /* border: 2px solid var(--light-green); */
 }
 
 #inner-card-content {
@@ -562,8 +562,9 @@ i
     }
     .has-greeting-card
     {
-        background: url(/static/img/main-frames/desktop-frame.png) no-repeat center center;
+        background: url(/static/img/main-frames/desktop-frame-centered.png) no-repeat center center;
         background-size: auto;
+        height: 100vh;
     }
     .corner-frame img {
         display: block;
