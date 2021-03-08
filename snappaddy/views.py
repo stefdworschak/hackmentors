@@ -12,6 +12,11 @@ def index(request):
     return render(request, 'paddy_snap.html')
 
 
+def test(request):
+    """ Displays the canvas and lets user create a new image """
+    return render(request, 'test.html')
+
+
 def save_image(request):
     """ Converts image to base64 and saves it in the DB """
     # if not request.method == 'POST':
