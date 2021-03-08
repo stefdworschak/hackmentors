@@ -212,10 +212,6 @@ function takepicture() {
     let bImge = '/' + background.join('/')
     console.log(bImge)
     inputCutout.value = bImge;
-    if(photo.width < width){
-        photo.classList.add('greeting-card-image-center');
-    }
-
     toggleReset();
 }
 
@@ -223,6 +219,9 @@ function toggleReset(){
     if($(startbutton).css('display') != 'none'){
         $(video).hide();
         $(photo).show();
+        if(photo.width < width){
+            photo.classList.add('greeting-card-image-center');
+        }
         $(startbutton).hide();
         $(clearbutton).css('display', 'inline-block');
         $(snapForm).css('display', 'inline-block');
