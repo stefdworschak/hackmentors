@@ -6,7 +6,7 @@
 
 <!-- COMMENTED OUT THE INTRO ANIMATION FOR NOW -->
 
-<div id="intro-animation" class="container-fluid">
+<!-- <div id="intro-animation" class="container-fluid">
     <h1>Paddy Snap</h1>
     <div id="running-leprechaun">
         <h2>Nya ha ha..</h2>
@@ -15,7 +15,7 @@
     <div id="chasing-paddy">
         <img src="/static/img/paddy_chasing.webp" alt="paddy running">
     </div>
-</div>    
+</div>     -->
 
 <div class="has-greeting-card">
     <div class="row">
@@ -64,7 +64,7 @@
 {% block js %}
 
 <!-- INTRO ANIMATIONS COMMENTED OUT FOR NOW -->
-<script>
+<!-- <script>
     let introAnim = document.getElementById('intro-animation');
 
     window.addEventListener('load', () => {
@@ -72,7 +72,7 @@
     introAnim.classList.add('hide');
     
   });
-</script>
+</script> -->
 <script>
 
 let width = 600;    // We will scale the photo width to this
@@ -130,7 +130,7 @@ function checkMobile(){
         height = window.innerWidth - 300;
         document.getElementById('greeting-card').style.width = width + 'px';
         document.getElementById('greeting-card').style.height = height + 'px';
-        $('button i').addClass('fa-2x');
+        // $('button i').addClass('fa-2x');
     }
     else if(isMobile.any()){
         console.log( window.innerWidth);
@@ -138,11 +138,11 @@ function checkMobile(){
         height = window.innerWidth - 80;
         document.getElementById('greeting-card').style.width = width + 'px';
         document.getElementById('greeting-card').style.height = height + 'px';
-        $('button i').addClass('fa-2x');
+        // $('button i').addClass('fa-2x');
     } else {
         document.getElementById('greeting-card').style.width = '500px';
         document.getElementById('greeting-card').style.height = '500px';
-        $('button i').removeClass('fa-2x');
+        // $('button i').removeClass('fa-2x');
     }
 }
 

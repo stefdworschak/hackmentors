@@ -327,19 +327,9 @@ body .container-fluid .row .col-12
 #share-to-facebook,
 #share-to-twitter{
     text-decoration: none;
-    font-size: 40px;
+    font-size: 45px;
     color: #014d0e;
     transition: .3s ease-in-out;
-}
-
-#startbutton:hover,
-#clearbutton:hover,
-#snapbutton:hover,
-#take-new-snap:hover,
-#share-to-facebook:hover,
-#share-to-twitter:hover
-{
-    border-radius: 50%;
 }
 
 #startbutton,
@@ -352,10 +342,42 @@ body .container-fluid .row .col-12
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 140px;
+    height: 120px;
+    width: 180px;
     border: none;
     border-radius: 16px;
+}
+
+/* === SITE BUTTONS === */
+
+#startbutton
+{
+    
+    border-radius: 25px 25px 60px 60px;
+    margin-top: 205px;
+    background: #FF9900;
+    box-shadow:  5px 5px 10px #492c00,
+                -2px -2px 10px #6d4509;
+}
+
+#clearbutton
+{
+    border-radius: 25px 25px 60px 25px;
+    top: 45px;
+    right: 28%;
+    background: #f14a17;
+    box-shadow:  5px 5px 10px #601800,
+                -2px -2px 10px #8f503b;
+}
+
+#snapbutton
+{
+    border-radius: 25px 25px 25px 60px;
+    top: 45px;
+    left: 28%;
+    background: #ccb100;
+    box-shadow:  5px 5px 10px #726300,
+                -2px -2px 5px #8a7d2d;
 }
 
 #take-new-snap
@@ -382,32 +404,6 @@ body .container-fluid .row .col-12
     color: #fafafa;
     box-shadow:  5px 5px 10px #013853,
                 -2px -2px 10px #0c567a;
-}
-
-#startbutton
-{
-    margin-top: 120px;
-    background: #FF9900;
-    box-shadow:  5px 5px 10px #492c00,
-                -2px -2px 10px #6d4509;
-}
-
-#clearbutton
-{
-    top: 30px;
-    right: 35%;
-    background: #f14a17;
-    box-shadow:  5px 5px 10px #601800,
-                -2px -2px 10px #8f503b;
-}
-
-#snapbutton
-{
-    top: 30px;
-    left: 35%;
-    background: #ccb100;
-    box-shadow:  5px 5px 10px #726300,
-                -2px -2px 5px #8a7d2d;
 }
 
 i
@@ -539,21 +535,34 @@ i
 
 @media screen and (min-width: 768px)
 {
-    #snapbutton
-    {
-        height: 120px;
-        width: 120px;
-        margin-top: 160px !important;
-    }
+    
 
-    #clearbutton,
-    #snapbutton,
     #share-to-facebook,
     #share-to-twitter,
     #take-new-snap {
         height: 120px;
         width: 120px;
-        margin-top: 10px !important;
+        /* margin-top: 10px !important; */
+    }
+
+    #startbutton,
+    #clearbutton,
+    #snapbutton
+    {
+        height: 100px;
+        width: 140px
+    }
+
+    #startbutton
+    {
+        width: 160px;
+        margin-top: 120px;
+    }
+
+    #clearbutton,
+    #snapbutton
+    {
+        margin-top: -40px;
     }
 
     #show-snap-wrap
@@ -569,17 +578,6 @@ i
     }
 }
 @media screen and (min-width: 1024px) {
-    #startbutton,
-    #take-new-snap,
-    #snapbutton,
-    #clearbutton,
-    #share-to-facebook,
-    #share-to-twitter
-    {
-        height: 70px;
-        width: 70px;
-        margin-bottom: 100px !important;
-    }
 
     #clearbutton,
     #snapbutton,
@@ -615,6 +613,51 @@ i
 }
 @media screen and (min-width: 1200px)
 {
+    /* === BUTTON HOVER ANIMATE BORDER RADIUS === */
+
+    #startbutton:hover,
+    #clearbutton:hover,
+    #snapbutton:hover,
+    #take-new-snap:hover,
+    #share-to-facebook:hover,
+    #share-to-twitter:hover
+    {
+        border-radius: 50%;
+    }
+
+    #startbutton,
+    #clearbutton,
+    #snapbutton,
+    #take-new-snap,
+    #share-to-facebook,
+    #share-to-twitter
+    {
+        width: 70px;
+        height: 70px;
+    }
+
+    #startbutton
+    {
+        margin-top: 95px;
+    }
+
+    #clearbutton
+    {
+        right: 33%;
+    }
+
+    #snapbutton
+    {
+        left: 33%;
+    }
+
+    #startbutton,
+    #clearbutton,
+    #snapbutton
+    {
+        border-radius: 16px;
+    }
+
     /* === SOCIAL MEDIA SHARE LINKS === */
 
     .social-share>p {
