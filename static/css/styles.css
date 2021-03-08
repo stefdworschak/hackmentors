@@ -239,7 +239,7 @@ body .container-fluid .row .col-12
     align-items: center;
     min-height: 100%;
     min-width: 100%;
-    background: url(/static/img/main-frames/mobile-frame.png) no-repeat center center;
+    background: url(/static/img/main-frames/mobile-paddy-v2.png) no-repeat center center;
     background-size: cover;
 }
 
@@ -490,7 +490,7 @@ i
     width: 600px;
     height: 600px;
     overflow: hidden;
-    background: url(/static/img/greetingCard/card-inner-bg-tr.png) no-repeat center center;
+    background: url(/static/img/greetingCard/card-inner-bg.png) no-repeat center center;
     background-size: cover;
     /* border: 2px solid var(--light-green); */
 }
