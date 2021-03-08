@@ -15,8 +15,8 @@
                     <video id="video" autoplay="true">Video stream not available.</video>
                 </div>
                 <canvas id="greeting-card-canvas"></canvas>
-                <div class="greeting-card">
-                    <img id="greeting-card-image">
+                <div class="greeting-card" id="greeting-card-photo">
+                    <img src="{% static 'img/test/png' %}">
                 </div>
             </div>
         </div>
@@ -204,7 +204,6 @@ function takepicture() {
     context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 
     var data = canvas.toDataURL('image/png');
-    console.log(data)
     photo.setAttribute('src', data);
     inputSnapFile.value = data;
     let backgroundImgUrl = window.getComputedStyle(cutout).backgroundImage;
