@@ -291,6 +291,11 @@ body .container-fluid .row .col-12
     display: block;
 }
 
+.greeting-card-image-center {
+    left: auto !important;
+    transform: none !important;
+}
+
 /* === ON SHOW CARD BUTTON WRAPPER === */
 .another-snap {
     min-width: 100vw;
@@ -310,7 +315,6 @@ body .container-fluid .row .col-12
     justify-content: center;
     align-items: center;
     flex-direction: row;
-
 }
 
 #startbutton,
